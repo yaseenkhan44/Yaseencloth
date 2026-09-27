@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Yaseen Fashion Store</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+
+    <div class="logo">
+        YASEEN CLOTHING
+    </div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="cart.html">Cart 🛒</a>
+    </nav>
+
+</header>
+
+
+<!-- PRODUCT -->
+
+<section class="product-page">
+
+    <div class="product-image">
+
+        <img src="clothing1.png" class="product-img" alt="T-Shirt">
+        
+
+    </div>
+
+
+    <div class="product-info">
+
+        <h1>Premium T-Shirt</h1>
+
+        <p class="price">
+            Rs. 999
+        </p>
+
+        <p>
+            Premium quality comfortable T-Shirt.
+            Available in multiple colors and sizes.
+        </p>
+
+
+        <h3>Select Color</h3>
+
+        <div class="colors">
+
+            <button onclick="changeColor('Black')">
+                Black
+            </button>
+
+            <button onclick="changeColor('White')">
+                White
+            </button>
+
+            <button onclick="changeColor('Red')">
+                Red
+            </button>
+
+            <button onclick="changeColor('Blue')">
+                Blue
+            </button>
+
+            <button onclick="changeColor('Green')">
+                Green
+            </button>
+
+            <button onclick="changeColor('Yellow')">
+                Yellow
+            </button>
+
+            <button onclick="changeColor('Brown')">
+                Brown
+            </button>
+
+            <button onclick="changeColor('Grey')">
+                Grey
+            </button>
+
+        </div>
+
+
+        <p id="selectedColor">
+            Color: Black
+        </p>
+
+
+        <h3>Select Size</h3>
+
+        <div class="sizes">
+
+            <button onclick="selectSize('S')">
+                S
+            </button>
+
+            <button onclick="selectSize('M')">
+                M
+            </button>
+
+            <button onclick="selectSize('L')">
+                L
+            </button>
+
+            <button onclick="selectSize('XL')">
+                XL
+            </button>
+
+        </div>
+
+
+        <p id="selectedSize">
+            Size: M
+        </p>
+
+
+        <h3>Quantity</h3>
+
+        <div class="quantity">
+
+            <button onclick="decreaseQuantity()">
+                −
+            </button>
+
+            <span id="quantity">
+                1
+            </span>
+
+            <button onclick="increaseQuantity()">
+                +
+            </button>
+
+        </div>
+
+
+        <button
+            class="add-cart"
+            onclick="addToCart()">
+
+            Add to Cart
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- RELATED PRODUCTS -->
+
+<section class="related-products">
+
+    <h2>
+        Related Products
+    </h2>
+
+
+    <div class="product-grid">
+
+
+        <div class="product-card">
+
+        <img src="clothing1.png" class="product-img" alt="T-Shirt">
+                
+
+            <h3>
+                Black T-Shirt
+            </h3>
+
+            <p>
+                Rs. 999
+            </p>
+
+            <a href="product.html">
+                View Product
+            </a>
+
+        </div>
+
+
+
+        <div class="product-card">
+
+           <img src="clothing1.png" class="product-img" alt="T-Shirt">
+
+            <h3>
+                White T-Shirt
+            </h3>
+
+            <p>
+                Rs. 999
+            </p>
+
+            <a href="product.html">
+                View Product
+            </a>
+
+        </div>
+
+
+
+        <div class="product-card">
+
+            <img src="clothing1.png" class="product-img" alt="T-Shirt">
+
+            <h3>
+                Red T-Shirt
+            </h3>
+
+            <p>
+                Rs. 999
+            </p>
+
+            <a href="product.html">
+                View Product
+            </a>
+
+        </div>
+
+
+
+        <div class="product-card">
+
+            <img src="clothing1.png" class="product-img" alt="T-Shirt">
+
+            <h3>
+                Blue T-Shirt
+            </h3>
+
+            <p>
+                Rs. 999
+            </p>
+
+            <a href="product.html">
+                View Product
+            </a>
+
+        </div>
+
+
+
+        <div class="product-card">
+
+            <img src="clothing1.png" class="product-img" alt="T-Shirt">
+
+            <h3>
+                Green T-Shirt
+            </h3>
+
+            <p>
+                Rs. 999
+            </p>
+
+            <a href="product.html">
+                View Product
+            </a>
+
+        </div>
+
+
+
+        <div class="product-card">
+
+         <img src="clothing1.png" class="product-img" alt="T-Shirts">
+
+            <h3>
+                Yellow T-Shirt
+            </h3>
+
+            <p>
+                Rs. 999
+            </p>
+
+            <a href="product.html">
+                View Product
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<script>
+
+let quantity = 1;
+
+let selectedColor = "Black";
+
+let selectedSize = "M";
+
+
+
+function changeColor(color) {
+
+    selectedColor = color;
+
+    document.getElementById("selectedColor").innerText =
+        "Color: " + color;
+
+}
+
+
+
+function selectSize(size) {
+
+    selectedSize = size;
+
+    document.getElementById("selectedSize").innerText =
+        "Size: " + size;
+
+}
+
+
+
+function increaseQuantity() {
+
+    quantity++;
+
+    document.getElementById("quantity").innerText =
+        quantity;
+
+}
+
+
+
+function decreaseQuantity() {
+
+    if (quantity > 1) {
+
+        quantity--;
+
+        document.getElementById("quantity").innerText =
+            quantity;
+
+    }
+
+}
+
+
+
+function addToCart() {
+
+    const product = {
+
+        name: "Premium T-Shirt",
+
+        price: 999,
+
+        color: selectedColor,
+
+        size: selectedSize,
+
+        quantity: quantity
+
+    };
+
+
+    localStorage.setItem(
+        "cartProduct",
+        JSON.stringify(product)
+    );
+
+
+    alert("Product added to cart!");
+
+
+    window.location.href = "cart.html";
+
+}
+
+</script>
+
+
+</body>
+<script>
+
+let quantity = 1;
+let selectedColor = "Black";
+let selectedSize = "M";
+
+function changeColor(color) {
+    selectedColor = color;
+    document.getElementById("selectedColor").innerText = "Color: " + color;
+}
+
+function selectSize(size) {
+    selectedSize = size;
+    document.getElementById("selectedSize").innerText = "Size: " + size;
+}
+
+function increaseQuantity() {
+    quantity++;
+    document.getElementById("quantity").innerText = quantity;
+}
+
+function decreaseQuantity() {
+    if (quantity > 1) {
+        quantity--;
+        document.getElementById("quantity").innerText = quantity;
+    }
+}
+
+function addToCart() {
+
+    let product = {
+        name: "Premium T-Shirt",
+        price: 999,
+        color: selectedColor,
+        size: selectedSize,
+        quantity: quantity,
+        image: "clothing1.png"
+    };
+
+    localStorage.setItem("cartProduct", JSON.stringify(product));
+
+    window.location.href = "cart.html";
+}
+
+</script>
+
+</html>
+

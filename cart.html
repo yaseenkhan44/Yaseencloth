@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="header">
+    <div class="logo">YASEEN CLOTHING</div>
+
+    <nav>
+        <a href="index.html">Home</a>
+        <a href="product.html">Shop</a>
+    </nav>
+</header>
+
+
+<section class="cart-page">
+
+    <h1>Your Shopping Cart</h1>
+
+    <div class="cart-item">
+
+        <img src="clothing1.png" alt="Premium T-Shirt">
+
+        <div class="cart-details">
+
+            <h2>Premium T-Shirt</h2>
+
+            <p>Color: Black</p>
+
+            <p>Size: M</p>
+
+            <p>Price: Rs. 999</p>
+
+            <div class="cart-quantity">
+                <button onclick="decreaseCart()">−</button>
+
+                <span id="cartQuantity">1</span>
+
+                <button onclick="increaseCart()">+</button>
+            </div>
+
+            <button class="remove-btn" onclick="removeItem()">
+                Remove
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <div class="cart-summary">
+
+        <h2>Order Summary</h2>
+
+        <p>Subtotal: Rs. <span id="total">999</span></p>
+
+        <p>Delivery: Free</p>
+
+        <h3>Total: Rs. <span id="finalTotal">999</span></h3>
+
+        <a href="checkout.html" class="checkout-btn">
+            Checkout
+        </a>
+
+    </div>
+
+</section>
+
+
+<script>
+
+let cartQuantity = 1;
+let price = 999;
+
+function updateCart() {
+
+    document.getElementById("cartQuantity").innerText =
+        cartQuantity;
+
+    let total = price * cartQuantity;
+
+    document.getElementById("total").innerText =
+        total;
+
+    document.getElementById("finalTotal").innerText =
+        total;
+}
+
+
+function increaseCart() {
+
+    cartQuantity++;
+
+    updateCart();
+}
+
+
+function decreaseCart() {
+
+    if (cartQuantity > 1) {
+
+        cartQuantity--;
+
+        updateCart();
+    }
+}
+
+
+function removeItem() {
+
+    document.querySelector(".cart-item").remove();
+
+    document.querySelector(".cart-summary").innerHTML =
+        "<h2>Your Cart is Empty</h2>";
+}
+
+</script>
+
+</body>
+</html>

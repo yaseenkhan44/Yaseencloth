@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout - Yaseen Fashion Store</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="checkout-container">
+
+        <div class="checkout-box">
+            <h2>Checkout</h2>
+
+            <label>Full Name</label>
+            <input type="text" placeholder="Enter your name">
+
+            <label>Mobile Number</label>
+            <input type="tel" placeholder="03XXXXXXXXX">
+
+            <label>Address</label>
+            <textarea placeholder="Enter your complete address"></textarea>
+
+            <label>City</label>
+            <input type="text" placeholder="Enter your city">
+
+            <label>Payment Method</label>
+            <select>
+                <option>Cash on Delivery</option>
+            </select>
+
+           <button class="place-order-btn" onclick="placeOrder()">
+             Place Order
+            </button>       
+           
+            
+                
+        </div>
+
+        <div class="order-summary">
+            <h2>Order Summary</h2>
+
+            <p>
+                <span>Product</span>
+                <span>Rs. 999</span>
+            </p>
+
+            <p>
+                <span>Delivery</span>
+                <span>Free</span>
+            </p>
+
+            <p class="total">
+                <span>Total</span>
+                <span>Rs. 999</span>
+            </p>
+        </div>
+
+    </div>
+    
+    <script>
+function placeOrder() {
+
+    let name = document.querySelector('input[placeholder="Enter your name"]').value;
+    let phone = document.querySelector('input[placeholder="03XXXXXXXXX"]').value;
+    let address = document.querySelector('textarea').value;
+    let city = document.querySelector('input[placeholder="Enter your city"]').value;
+
+    let message =
+        "🛍️ New Order - Yaseen Fashion Store%0A%0A" +
+        "Name: " + name + "%0A" +
+        "Mobile: " + phone + "%0A" +
+        "Address: " + address + "%0A" +
+        "City: " + city + "%0A" +
+        "Total: Rs. 999";
+
+    let whatsappNumber = "92+ 03111089742";
+
+    window.open(
+        "https://wa.me/" + whatsappNumber + "?text=" + message,
+        "_blank"
+    );
+}
+</script>
+    
+
+</body>
+</html>
